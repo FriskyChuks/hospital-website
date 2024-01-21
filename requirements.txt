@@ -1,5 +1,5 @@
 asgiref==3.7.2
-Django==4.2.4 # modified
+Django==5.0.1
 fontawesomefree==6.5.1
 psycopg2==2.9.9
 psycopg2-binary==2.9.9
