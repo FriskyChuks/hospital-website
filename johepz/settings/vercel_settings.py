@@ -118,10 +118,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/img/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'staticfiles')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
