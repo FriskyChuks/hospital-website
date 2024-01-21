@@ -4,8 +4,8 @@ from .models import *
 
 
 def home_view(request):
-    services = Services.objects.all()
-    staff = Staff.objects.all()
+    # services = Services.objects.all()
+    # staff = Staff.objects.all()
     if request.method == 'POST':
         print('POSTED')
         service = request.POST.get('service')
@@ -18,6 +18,6 @@ def home_view(request):
             service_id=service, doctor_id=doctor, full_name=full_name, email=email,
             appointment_date=appointment_date, appointment_time=appointment_time
         )
-    context = {'services': services, 'staff': staff}
+    # context = {'services': services, 'staff': staff}
 
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {})
