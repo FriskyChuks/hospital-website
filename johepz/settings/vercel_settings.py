@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 
+from decouple import config
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -9,6 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ll7=o2o&3i!0+ub*1bk2n02vqsrz_)15uo!_2+(tsc0d@^)0e4'
+
+SECRET_KEY = os.getenv(
+    SECRET_KEY) if SECRET_KEY in os.environ[SECRET_KEY] else config(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -119,11 +124,13 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/img/'
+# MEDIA_URL = '/img/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'staticfiles')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_URL = '/staticfiles/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
